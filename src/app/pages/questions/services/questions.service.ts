@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core'
+import * as dynamicRules from 'dynamic-rules'
+import * as moment from 'moment'
 
-import { DefaultQuestionsHidden } from '../../../../assets/data/defaultConfig'
+import { DefaultQuestionnaireFilters } from '../../../../assets/data/defaultConfig'
 import { QuestionnaireService } from '../../../core/services/config/questionnaire.service'
 import { RemoteConfigService } from '../../../core/services/config/remote-config.service'
 import { LocalizationService } from '../../../core/services/misc/localization.service'
@@ -78,10 +80,12 @@ export class QuestionsService {
   }
 
   processQuestions(title, questions: any[]) {
-    if (title.includes('ESM28Q'))
-      if (new Date().getHours() > 10) return Promise.resolve(questions.slice(1))
-
-    return Promise.resolve(questions)
+    return this.getHiddenQuestionIds(title)
+      .then(questionsToHide => {
+        if (questionsToHide.length == questions.length) return questions
+        return questions.filter((_, i) => !questionsToHide.includes(i))
+      })
+      .catch(e => questions)
   }
 
   isAnswered(question: Question) {
@@ -193,13 +197,24 @@ export class QuestionsService {
     return this.finish.evalClinicalFollowUpTask(assessment)
   }
 
-  getHiddenQuestions(): Promise<Object> {
+  getHiddenQuestionIds(title): Promise<number[]> {
+    const conditionalVars = { time: moment() }
     return this.remoteConfig
       .read()
       .then(config =>
-        config.getOrDefault(ConfigKeys.QUESTIONS_HIDDEN, DefaultQuestionsHidden)
+        config.getOrDefault(
+          ConfigKeys.QUESTIONNAIRE_FILTERS,
+          DefaultQuestionnaireFilters
+        )
       )
+      .catch(e => DefaultQuestionnaireFilters)
       .then(res => JSON.parse(res))
-      .catch(e => DefaultQuestionsHidden)
+      .then(data => {
+        const questionsHidden = data.questions_hidden[title]
+        if (questionsHidden) {
+          const result = dynamicRules.execute(conditionalVars, questionsHidden)
+          return result.formula
+        } else return []
+      })
   }
 }

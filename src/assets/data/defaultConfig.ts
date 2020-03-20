@@ -256,4 +256,4 @@ export const DefaultSettingsSupportedLanguages: LanguageSetting[] = [
   }
 ]
 
-export const DefaultQuestionsHidden = '{}'
+export const DefaultQuestionnaireFilters = '{}'

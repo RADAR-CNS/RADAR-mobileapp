@@ -3933,6 +3933,11 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
 
+dynamic-rules@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/dynamic-rules/-/dynamic-rules-1.0.1.tgz#6a0b6ea12b71b7cf5bc6fe7f1ae29d8c8398f57d"
+  integrity sha512-E9I2SNNUGdbqMh2VScFGfpIutgW0RRfd2UruXL5ghOSF+cDNktAMOrbxWiJStulAx2Ep7dP+Rkd8/AWGYLGN/Q==
+
 ecc-jsbn@~0.1.1:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.2.tgz#3a83a904e54353287874c564b7549386849a98c9"
