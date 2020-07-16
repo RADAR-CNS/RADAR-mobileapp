@@ -22,6 +22,8 @@ import { NotificationGeneratorService } from '../notifications/notification-gene
 
 @Injectable()
 export class ScheduleGeneratorService {
+  DefaultReferenceTimestampFormat = 'DD-MM-YYYY:hh:mm'
+
   constructor(
     private notificationService: NotificationGeneratorService,
     private localization: LocalizationService,
@@ -121,17 +123,36 @@ export class ScheduleGeneratorService {
     return { repeatP, repeatQ }
   }
 
+  getIterTime(protocol, refTimestamp, repeatP) {
+    // NOTE: Get initial timestamp to start schedule generation from
+    const dayOfWeek = repeatP.dayOfWeek
+    // NOTE: If ref timestamp is specified in the protocol, gets refTimestamp (in the timezone of device)
+    const refTime = protocol.referenceTimestamp
+      ? setDateTimeToMidnight(
+          this.localization
+            .moment(
+              protocol.referenceTimestamp,
+              this.DefaultReferenceTimestampFormat
+            )
+            .toDate()
+        ).getTime()
+      : refTimestamp
+    // NOTE: If day of the week is specified in the protocol
+    const iterTime = dayOfWeek
+      ? this.shiftDayOfWeek(refTime, dayOfWeek)
+      : refTime
+    return iterTime
+  }
+
   buildTasksForSingleAssessment(
     assessment: Assessment,
     indexOffset: number,
     refTimestamp,
     type: AssessmentType
   ): Task[] {
-    const { repeatP, repeatQ } = this.getRepeatProtocol(
-      assessment.protocol,
-      type
-    )
-    let iterTime = refTimestamp
+    const protocol = assessment.protocol
+    const { repeatP, repeatQ } = this.getRepeatProtocol(protocol, type)
+    let iterTime = this.getIterTime(protocol, refTimestamp, repeatP)
     const endTime =
       iterTime + getMilliseconds({ years: DefaultScheduleYearCoverage })
     const completionWindow = ScheduleGeneratorService.computeCompletionWindow(
@@ -226,6 +247,22 @@ export class ScheduleGeneratorService {
       })
     }
     return { schedule, completed }
+  }
+
+  shiftDayOfWeek(refTimestamp, dayOfWeek) {
+    // NOTE: Shift ref timestamp to specified day of the same week
+    const moment = this.localization.moment(refTimestamp)
+    const target = moment.day(dayOfWeek).valueOf()
+    return moment.valueOf() <= target
+      ? moment
+          .day(dayOfWeek)
+          .toDate()
+          .getTime()
+      : moment
+          .add(1, 'w')
+          .day(dayOfWeek)
+          .toDate()
+          .getTime()
   }
 
   static computeCompletionWindow(assessment: Assessment): number {

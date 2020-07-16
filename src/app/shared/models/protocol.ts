@@ -13,6 +13,7 @@ export interface Protocol {
   clinicalProtocol?: ClinicalProtocol
   onDemandProtocol?
   completionWindow?: TimeInterval
+  referenceTimestamp?: string
 }
 
 export interface ProtocolMetaData {
@@ -23,6 +24,7 @@ export interface ProtocolMetaData {
 export interface TimeInterval {
   unit?: string
   amount?: number
+  dayOfWeek?: string
 }
 
 export interface RepeatQuestionnaire {
