@@ -3,5 +3,17 @@
     <h2 dir="auto" class="heading">{{ heading }}</h2>
     <img src="{{ image }}" alt="mockreport" class="image" />
     <div class="timer">{{ taskTimer.displayTime }}</div>
+    <div *ngIf="!autoStart" class="button-bottom">
+      <button
+        ion-button
+        class="bt bt--full"
+        [class.bt-stop]="taskTimer.isRunning"
+        round
+        full
+        (tap)="handleTimer()"
+      >
+        {{ getTimerButtonText() }}
+      </button>
+    </div>
   </div>
 </div>

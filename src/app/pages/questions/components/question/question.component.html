@@ -105,6 +105,17 @@
           [image]="question.field_annotation.image"
           [timer]="question.field_annotation.timer"
           [currentlyShown]="currentlyShown"
+          [autoStart]="true"
+          (valueChange)="onValueChange($event)"
+        >
+        </timed-test>
+
+        <timed-test
+          *ngSwitchCase="'timed-manual'"
+          [heading]="question.field_label"
+          [image]="question.field_annotation.image"
+          [timer]="question.field_annotation.timer"
+          [currentlyShown]="currentlyShown"
           (valueChange)="onValueChange($event)"
         >
         </timed-test>

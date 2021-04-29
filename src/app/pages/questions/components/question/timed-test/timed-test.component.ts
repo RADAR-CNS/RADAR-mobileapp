@@ -12,7 +12,9 @@ import { BackgroundMode } from '@ionic-native/background-mode/ngx'
 import { Dialogs } from '@ionic-native/dialogs/ngx'
 import { Vibration } from '@ionic-native/vibration/ngx'
 
+import { LocKeys } from '../../../../../shared/enums/localisations'
 import { TaskTimer, Timer } from '../../../../../shared/models/timer'
+import { TranslatePipe } from '../../../../../shared/pipes/translate/translate'
 import {
   getMilliseconds,
   getSeconds
@@ -33,21 +35,25 @@ export class TimedTestComponent implements OnInit, OnChanges, OnDestroy {
   timer: Timer
   @Input()
   currentlyShown: boolean
+  @Input()
+  autoStart: boolean
 
   public taskTimer: TaskTimer
   startTime: number
   endTime: number
+  timerInterval: any
 
   constructor(
     private dialogs: Dialogs,
     private vibration: Vibration,
     private background: BackgroundMode,
-    private ref: ChangeDetectorRef
+    private ref: ChangeDetectorRef,
+    private translate: TranslatePipe
   ) {}
 
   ngOnInit() {
     this.background.enable()
-    this.initTimer()
+    this.resetTimer()
   }
 
   ngOnDestroy() {
@@ -55,72 +61,82 @@ export class TimedTestComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnChanges() {
-    if (this.currentlyShown) {
-      this.startTimer()
-    }
+    if (this.currentlyShown && this.autoStart) this.startTimer()
   }
 
-  hasFinished() {
-    return this.taskTimer.hasFinished
-  }
-
-  hasStarted() {
-    return this.taskTimer.hasStarted
-  }
-
-  initTimer() {
+  resetTimer() {
     if (!this.timer) {
       this.timer.start = 0
     }
 
     this.taskTimer = {
-      hasStarted: false,
-      hasFinished: false,
+      isRunning: false,
       secondsElapsed: 0,
-      secondsRemaining: this.timer.start,
-      duration: this.timer.start - this.timer.end,
+      secondsElapsedExact: 0,
+      secondsRemaining: Math.max(this.timer.start, this.timer.end),
+      duration: Math.abs(this.timer.start - this.timer.end),
       displayTime: this.timer.start
     }
   }
 
+  handleTimer() {
+    if (!this.taskTimer.isRunning) this.startTimer()
+    else {
+      this.stopTimer()
+      this.resetTimer()
+    }
+  }
+
   startTimer() {
-    this.taskTimer.hasStarted = true
+    this.taskTimer.isRunning = true
     this.startTime = Date.now()
     this.endTime =
       this.startTime + getMilliseconds({ seconds: this.taskTimer.duration })
     this.timerTick()
   }
 
+  getTimerButtonText() {
+    return this.translate.transform(
+      this.taskTimer.isRunning
+        ? LocKeys.BTN_STOP.toString()
+        : LocKeys.BTN_START.toString()
+    )
+  }
+
   updateCountdown() {
+    this.taskTimer.secondsElapsedExact = getSeconds({
+      milliseconds: Date.now() - this.startTime
+    })
     this.taskTimer.secondsElapsed = Math.floor(
-      getSeconds({
-        milliseconds: Date.now() - this.startTime
-      })
+      this.taskTimer.secondsElapsedExact
     )
     this.taskTimer.displayTime =
-      this.timer.start - this.taskTimer.secondsElapsed
+      this.timer.start > this.timer.end
+        ? this.timer.start - this.taskTimer.secondsElapsed
+        : this.taskTimer.secondsElapsed
     this.ref.markForCheck()
   }
 
   timerTick() {
-    if (!this.taskTimer.hasStarted) {
-      return
-    }
-    const timerId = setInterval(() => {
-      this.updateCountdown()
+    if (!this.taskTimer.isRunning) return
 
-      if (this.endTime - Date.now() <= 0) {
-        clearInterval(timerId)
-        this.stopTimer()
-      }
+    this.timerInterval = setInterval(() => {
+      this.updateCountdown()
+      if (this.endTime - Date.now() <= 0) this.stopTimer()
     }, 1000)
   }
 
   stopTimer() {
+    clearInterval(this.timerInterval)
     this.background.moveToForeground()
     this.dialogs.beep(1)
     this.vibration.vibrate(500)
-    this.taskTimer.hasFinished = true
-    this.valueChange.emit(this.endTime)
+    this.taskTimer.isRunning = false
+    this.valueChange.emit(this.getEndTime())
+  }
+
+  getEndTime() {
+    if (this.autoStart) return this.endTime
+    else return this.taskTimer.secondsElapsedExact
   }
 }

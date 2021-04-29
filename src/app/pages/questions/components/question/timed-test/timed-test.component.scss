@@ -32,4 +32,13 @@ timed-test {
     width: 200px;
     height: auto;
   }
+
+  .button-bottom {
+    left: 50%;
+    width: 80%;
+  }
+
+  .bt-stop {
+    background-color: $cl-danger-40;
+  }
 }
