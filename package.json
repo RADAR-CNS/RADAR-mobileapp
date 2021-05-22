@@ -116,7 +116,7 @@
     "rxjs": "^6.6.3",
     "semver": "^7.3.2",
     "smoothscroll-polyfill": "^0.4.4",
-    "snyk": "^1.361.3",
+    "snyk": "^1.574.0",
     "unorm": "^1.6.0",
     "url-join": "^4.0.1",
     "uuid": "^3.4.0",
