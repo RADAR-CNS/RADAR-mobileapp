@@ -175,7 +175,7 @@
     "prettier": "^2.1.2",
     "reflect-metadata": "^0.1.13",
     "requirejs": "^2.3.6",
-    "rxjs-compat": "^6.5.5",
+    "rxjs-compat": "^6.6.7",
     "rxjs-tslint": "0.1.5",
     "stylefmt": "^6.0.3",
     "stylelint": "^13.6.1",
