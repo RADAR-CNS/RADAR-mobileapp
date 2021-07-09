@@ -583,10 +583,10 @@
   dependencies:
     "@types/cordova" latest
 
-"@ionic-native/barcode-scanner@^5.27.0":
-  version "5.27.0"
-  resolved "https://registry.yarnpkg.com/@ionic-native/barcode-scanner/-/barcode-scanner-5.27.0.tgz#85f1c97d469b6eb2560628fb390babe33288b529"
-  integrity sha512-rBtZzQ7ed2bmf65sXzdzk7CFeCY1VKAJ6c6zZMlIYPJ13zKJ93U1qL9hsgSLQcUxhA86SJk8A4e7MurfKnPSFw==
+"@ionic-native/barcode-scanner@^5.33.1":
+  version "5.33.1"
+  resolved "https://registry.yarnpkg.com/@ionic-native/barcode-scanner/-/barcode-scanner-5.33.1.tgz#bed200f5a96d3259ff8be3364386e0b4780061e6"
+  integrity sha512-+nIMspJ2W07gOhw7gTjMwQKrRcbAEJLKAdYGnXNJb3I6v2ps0dpdOsgipKmB+nK5/3abvrLx6+YRBarBy2dw4w==
   dependencies:
     "@types/cordova" latest
 
@@ -8428,13 +8428,6 @@ kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
   integrity sha1-MeohpzS6ubuw8yRm2JOupR5KPGQ=
-  dependencies:
-    is-buffer "^1.1.5"
-
-kind-of@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-4.0.0.tgz#20813df3d712928b207378691a45066fae72dd57"
-  integrity sha1-IIE989cSkosgc3hpGkUGb65y3Vc=
   dependencies:
     is-buffer "^1.1.5"
 
