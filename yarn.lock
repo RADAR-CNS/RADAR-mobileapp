@@ -625,10 +625,10 @@
   dependencies:
     "@types/cordova" latest
 
-"@ionic-native/firebase@^5.31.1":
-  version "5.31.1"
-  resolved "https://registry.yarnpkg.com/@ionic-native/firebase/-/firebase-5.31.1.tgz#66a74f2562faaee24f0865d79b67a601905bb53e"
-  integrity sha512-X38+geOxogkKaWAawkD+U44Mcp40SjPN5UlDdyzKHvVSpdney9J44s8E+B+QASWtp9niHVwH0jxOkS2w07s1iA==
+"@ionic-native/firebase@^5.34.0":
+  version "5.34.0"
+  resolved "https://registry.yarnpkg.com/@ionic-native/firebase/-/firebase-5.34.0.tgz#ef6a182f18970a9b64e563372d75af2ec393282f"
+  integrity sha512-g4wFAkSsJXCvq9G7sSRf/eze7TGnUGYwhTJ1G6ah5bg+PoCN85xne0702dl4wM3Go/X0weq1p8RhnzbopdfpLQ==
   dependencies:
     "@types/cordova" latest
 
@@ -8428,13 +8428,6 @@ kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
   integrity sha1-MeohpzS6ubuw8yRm2JOupR5KPGQ=
-  dependencies:
-    is-buffer "^1.1.5"
-
-kind-of@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-4.0.0.tgz#20813df3d712928b207378691a45066fae72dd57"
-  integrity sha1-IIE989cSkosgc3hpGkUGb65y3Vc=
   dependencies:
     is-buffer "^1.1.5"
 
