@@ -774,14 +774,12 @@
     tslib "^1.9.0"
     ws "^7.0.0"
 
-"@ionic/storage@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@ionic/storage/-/storage-2.2.0.tgz#ac181991d3bfc8352a5400efb5e9faa5e76b5d4b"
-  integrity sha512-2pszrzmI+fAar2Rx0WmJDVpc15D1k5tvLkB49NLYWJ2pOMaO/3/vp7mg/mEbg3rdsPE9FRbYI6vdKjQ2pP1EWA==
+"@ionic/storage@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@ionic/storage/-/storage-3.0.4.tgz#8a430d8862fc2e37f05cf126e1723d00d517b92e"
+  integrity sha512-fE0jCe2y32Bz2qwQC1F+ANb4YW2iAwOlAj7Js9Zz0HWrlKG+RKi1zKVdpuuik8ev5FujYANd6wtm0ikVuaXA+A==
   dependencies:
-    localforage "1.7.1"
-    localforage-cordovasqlitedriver "1.7.0"
-    tslib "^1.7.1"
+    localforage "^1.9.0"
 
 "@ionic/utils-array@1.2.2":
   version "1.2.2"
@@ -8431,13 +8429,6 @@ kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   dependencies:
     is-buffer "^1.1.5"
 
-kind-of@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-4.0.0.tgz#20813df3d712928b207378691a45066fae72dd57"
-  integrity sha1-IIE989cSkosgc3hpGkUGb65y3Vc=
-  dependencies:
-    is-buffer "^1.1.5"
-
 kind-of@^5.0.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-5.1.0.tgz#729c91e2d857b7a419a1f9aa65685c4c33f5845d"
@@ -8619,24 +8610,10 @@ loader-utils@1.2.3, loader-utils@^1.0.1, loader-utils@^1.0.2, loader-utils@^1.1.
     emojis-list "^2.0.0"
     json5 "^1.0.1"
 
-localforage-cordovasqlitedriver@1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/localforage-cordovasqlitedriver/-/localforage-cordovasqlitedriver-1.7.0.tgz#8b93957759ee688d3a58d5ba7c0477f6ccb53838"
-  integrity sha1-i5OVd1nuaI06WNW6fAR39sy1ODg=
-  dependencies:
-    localforage ">=1.5.0"
-
-localforage@1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/localforage/-/localforage-1.7.1.tgz#e4927e042302b864db30f3211f13b5c6f0de965d"
-  integrity sha1-5JJ+BCMCuGTbMPMhHxO1xvDell0=
-  dependencies:
-    lie "3.1.1"
-
-localforage@>=1.5.0:
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/localforage/-/localforage-1.7.3.tgz#0082b3ca9734679e1bd534995bdd3b24cf10f204"
-  integrity sha512-1TulyYfc4udS7ECSBT2vwJksWbkwwTX8BzeUIiq8Y07Riy7bDAAnxDaPU/tWyOVmQAcWJIEIFP9lPfBGqVoPgQ==
+localforage@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/localforage/-/localforage-1.9.0.tgz#f3e4d32a8300b362b4634cc4e066d9d00d2f09d1"
+  integrity sha512-rR1oyNrKulpe+VM9cYmcFn6tsHuokyVHFaCM3+osEmxaHTbEk8oQu6eGDfS6DQLWi/N67XRmB8ECG37OES368g==
   dependencies:
     lie "3.1.1"
 
