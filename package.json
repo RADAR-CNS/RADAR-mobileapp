@@ -168,7 +168,7 @@
     "karma-spec-reporter": "^0.0.32",
     "karma-webpack": "^4.0.2",
     "node-sass": "^4.14.1",
-    "postcss": "^7.0.23",
+    "postcss": "^8.2.10",
     "postcss-cli": "^7.1.2",
     "postcss-scss": "^2.0.0",
     "postcss-sorting": "^5.0.1",
