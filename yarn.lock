@@ -4138,10 +4138,10 @@ cordova-plugin-local-notification@^0.9.0-beta.3:
   version "3.0.0-dev"
   resolved "git+https://github.com/apache/cordova-plugin-network-information.git#c5e6656bb6054801eb0e7c041cec2d799c824580"
 
-cordova-plugin-splashscreen@^5.0.4:
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/cordova-plugin-splashscreen/-/cordova-plugin-splashscreen-5.0.4.tgz#1bb6fc2d0d5a55cb987e35af554a2693f80abc39"
-  integrity sha512-zmyhBrObNuwDH4KB4zuZrJ9IKC113EM6KJpqC0/2f3o9GRznPk1S4j9O9rosJT4EASg4X3hdssv9XkAH3D5ZYg==
+cordova-plugin-splashscreen@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/cordova-plugin-splashscreen/-/cordova-plugin-splashscreen-6.0.0.tgz#674718f87894cd75615da2b55905eb4cc719cf01"
+  integrity sha512-pm4ZtJKQY4bCGXVeIInbGrXilryTevYSKgfvoQJpW9UClOWKAxSsYf2/4G2u1vcn492svOSL42OSa2MhujBWEQ==
 
 cordova-plugin-statusbar@^2.4.3:
   version "2.4.3"
@@ -8428,13 +8428,6 @@ kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
   integrity sha1-MeohpzS6ubuw8yRm2JOupR5KPGQ=
-  dependencies:
-    is-buffer "^1.1.5"
-
-kind-of@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-4.0.0.tgz#20813df3d712928b207378691a45066fae72dd57"
-  integrity sha1-IIE989cSkosgc3hpGkUGb65y3Vc=
   dependencies:
     is-buffer "^1.1.5"
 
