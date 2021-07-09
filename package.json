@@ -84,7 +84,7 @@
     "cordova-plugin-app-version": "^0.1.12",
     "cordova-plugin-background-mode-fixes": "^0.7.6",
     "cordova-plugin-badge": "^0.8.8",
-    "cordova-plugin-camera": "^4.0.3",
+    "cordova-plugin-camera": "^5.0.2",
     "cordova-plugin-device": "^2.0.3",
     "cordova-plugin-dialogs": "^2.0.2",
     "cordova-plugin-enable-multidex": "git+https://github.com/adriano-di-giovanni/cordova-plugin-enable-multidex.git",
