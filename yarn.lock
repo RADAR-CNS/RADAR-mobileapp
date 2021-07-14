@@ -667,10 +667,10 @@
   dependencies:
     "@types/cordova" latest
 
-"@ionic-native/splash-screen@^5.26.0":
-  version "5.26.0"
-  resolved "https://registry.yarnpkg.com/@ionic-native/splash-screen/-/splash-screen-5.26.0.tgz#4dde62ae9067f5b4862bf3fa6f6b0bafbbad850b"
-  integrity sha512-l6SNuaD38nprBZ/JbpBpcIl4EMZYEgNufcT5/n2FiLOpQ91heCQ4XSim7+DDhUvTkDm8+jBIX3Nv+GnYvpkb0g==
+"@ionic-native/splash-screen@^5.34.0":
+  version "5.34.0"
+  resolved "https://registry.yarnpkg.com/@ionic-native/splash-screen/-/splash-screen-5.34.0.tgz#80bac8c3fca16816b8847a6ad2e51e6a8705a1ae"
+  integrity sha512-ZSeT7v19fqhcyuvImhiXoTz2st82pUK99XxnZeUIa9U9zDu2zTkKI8ctNkBrSnFdVGjdKr8JA+aoOxWiQCzxOA==
   dependencies:
     "@types/cordova" latest
 
@@ -8431,13 +8431,6 @@ kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
   integrity sha1-MeohpzS6ubuw8yRm2JOupR5KPGQ=
-  dependencies:
-    is-buffer "^1.1.5"
-
-kind-of@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-4.0.0.tgz#20813df3d712928b207378691a45066fae72dd57"
-  integrity sha1-IIE989cSkosgc3hpGkUGb65y3Vc=
   dependencies:
     is-buffer "^1.1.5"
 
