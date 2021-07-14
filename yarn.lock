@@ -646,10 +646,10 @@
   dependencies:
     "@types/cordova" latest
 
-"@ionic-native/keyboard@^5.26.0":
-  version "5.26.0"
-  resolved "https://registry.yarnpkg.com/@ionic-native/keyboard/-/keyboard-5.26.0.tgz#caa2c76ae2dba772261386dfe47209d6a9b90a94"
-  integrity sha512-Jk2WCr7Ssfzv+JVQhv3SduagjrSuUsx7UK9JbDlYfDo92XIO2MpGyNbbNSRdCMFUrS4BF39BATin+opfxdQqjw==
+"@ionic-native/keyboard@^5.34.0":
+  version "5.34.0"
+  resolved "https://registry.yarnpkg.com/@ionic-native/keyboard/-/keyboard-5.34.0.tgz#6d4d827bac048abb2982b7fed59753d50a329991"
+  integrity sha512-DjPYoiYD+oYe2PaSuwV+KkyJCfsERShmJ2K7dqAEf3q4qjo1Vo6AeVqwMXY4IGOSTwMFB6YrBTbExVOXNpqT3A==
   dependencies:
     "@types/cordova" latest
 
@@ -8431,13 +8431,6 @@ kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
   integrity sha1-MeohpzS6ubuw8yRm2JOupR5KPGQ=
-  dependencies:
-    is-buffer "^1.1.5"
-
-kind-of@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-4.0.0.tgz#20813df3d712928b207378691a45066fae72dd57"
-  integrity sha1-IIE989cSkosgc3hpGkUGb65y3Vc=
   dependencies:
     is-buffer "^1.1.5"
 
