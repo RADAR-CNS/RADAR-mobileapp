@@ -653,10 +653,10 @@
   dependencies:
     "@types/cordova" latest
 
-"@ionic-native/local-notifications@^5.28.0":
-  version "5.28.0"
-  resolved "https://registry.yarnpkg.com/@ionic-native/local-notifications/-/local-notifications-5.28.0.tgz#c31efc2937260f2bc0d87c6d62f6bfbc02702ab9"
-  integrity sha512-cJDlRbYG+r1kzFEJEu7yU9kMgyWeh/K1cdGE4n6ff9I+Dcp9pBsL5owGnNj/4dg88pErHUmPzhbvzwbnuWvzbQ==
+"@ionic-native/local-notifications@^5.34.0":
+  version "5.34.0"
+  resolved "https://registry.yarnpkg.com/@ionic-native/local-notifications/-/local-notifications-5.34.0.tgz#6a9ec878bb58b529b619cf77988f8ad5e19dd8de"
+  integrity sha512-Wy/3fAZzV0c8kyeHWyiqEiXmu6p/Q4hJHScscQT+kuw66EasHCHtliCEYzJIGO6eijBwMQBHkWwUbIM+0jOmfg==
   dependencies:
     "@types/cordova" latest
 
@@ -8431,13 +8431,6 @@ kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
   integrity sha1-MeohpzS6ubuw8yRm2JOupR5KPGQ=
-  dependencies:
-    is-buffer "^1.1.5"
-
-kind-of@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-4.0.0.tgz#20813df3d712928b207378691a45066fae72dd57"
-  integrity sha1-IIE989cSkosgc3hpGkUGb65y3Vc=
   dependencies:
     is-buffer "^1.1.5"
 
