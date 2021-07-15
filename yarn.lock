@@ -611,10 +611,10 @@
   dependencies:
     "@types/cordova" latest
 
-"@ionic-native/file@^5.26.0":
-  version "5.26.0"
-  resolved "https://registry.yarnpkg.com/@ionic-native/file/-/file-5.26.0.tgz#1529a4f5381c74cc866564e9cb26f06158c84826"
-  integrity sha512-sJONMhwEpZtONU59m0Rs6PmzD+C3lcaZkc7TryAXgF+9F6XUjhZu6efis3qzgxWHTMXNr7vBdrzfLAQB5bCGMA==
+"@ionic-native/file@^5.32.1":
+  version "5.33.0"
+  resolved "https://registry.yarnpkg.com/@ionic-native/file/-/file-5.33.0.tgz#4920d5c36e36c7110975528f82100bb3ccf1c98b"
+  integrity sha512-RisSGJl2t8JrBgw30Vn5hJYYKEDTHR9f3KbQDfe1MQg+VrZo7vnbml/vk4l55u65c1TYZDH+F6i7s9nyif1QVQ==
   dependencies:
     "@types/cordova" latest
 
