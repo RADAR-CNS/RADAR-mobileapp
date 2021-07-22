@@ -24,12 +24,8 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.accessibility.usePreferredTextZoom(false)
       this.statusBar.hide()
-      this.notificationService
-        .init()
-        .then(() => this.notificationService.permissionCheck())
-        .catch()
-        .then(() => (this.isAppInitialized = true))
-        .then(() => this.splashScreen.hide())
+      this.isAppInitialized = true
+      this.splashScreen.hide()
     })
   }
 }

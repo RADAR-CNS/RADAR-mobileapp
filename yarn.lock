@@ -4066,10 +4066,9 @@ cordova-plugin-app-version@^0.1.12:
   resolved "https://registry.yarnpkg.com/cordova-plugin-app-version/-/cordova-plugin-app-version-0.1.12.tgz#08798f6edf870e42dc655a8f1028894428eb72a6"
   integrity sha512-P+0d9+h9HasanKuMd8tcEpuJJlsVmClie3Mbq16v3TV/VroDrgYB6Ea8Imkc/WjjMVSBCjWB+pji1LoupWlddA==
 
-cordova-plugin-background-mode-fixes@^0.7.6:
-  version "0.7.6"
-  resolved "https://registry.yarnpkg.com/cordova-plugin-background-mode-fixes/-/cordova-plugin-background-mode-fixes-0.7.6.tgz#b98e6cd319ed3495042e20e6e01142474a2bb568"
-  integrity sha512-9BgAaLy/VcIX7FpWzDDgSIYfN7ZF32QL0U8Ell/5LXEKOqbIZTl8+NpUsotqGxMJ0coaBWoqbkBgqh45NR2H3g==
+"cordova-plugin-background-mode@git+https://bitbucket.org/TheBosZ/cordova-plugin-run-in-background.git":
+  version "0.7.3"
+  resolved "git+https://bitbucket.org/TheBosZ/cordova-plugin-run-in-background.git#df990e762f6ad8fb2021c0001f3576bd9b5b8bb7"
 
 cordova-plugin-badge@^0.8.8:
   version "0.8.8"

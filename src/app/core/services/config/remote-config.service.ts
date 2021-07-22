@@ -114,6 +114,7 @@ export class FirebaseRemoteConfigService extends RemoteConfigService {
   ) {
     super(storage)
     this.configSubject = new BehaviorSubject(new EmptyRemoteConfig())
+    this.firebase.setConfigSettings({ fetchTimeout: 10 })
   }
 
   forceFetch(): Promise<RemoteConfig> {

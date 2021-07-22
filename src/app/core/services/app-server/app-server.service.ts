@@ -159,7 +159,7 @@ export class AppServerService {
             timezone: moment.tz.guess(),
             language: this.localization.getLanguage().value
           },
-          { headers }
+          { headers, params: { forceFcmToken: 'true' } }
         )
         .toPromise()
     )
@@ -180,7 +180,7 @@ export class AppServerService {
             subjectId
           ),
           updatedSubject,
-          { headers }
+          { headers, params: { forceFcmToken: 'true' } }
         )
         .toPromise()
     })

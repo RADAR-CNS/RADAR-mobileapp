@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core'
 
 import { DefaultNumberOfCompletionLogsToSend } from '../../../../assets/data/defaultConfig'
 import { ConfigService } from '../../../core/services/config/config.service'
+import { NotificationService } from '../../../core/services/notifications/notification.service'
 import { ScheduleService } from '../../../core/services/schedule/schedule.service'
 import { TokenService } from '../../../core/services/token/token.service'
 import { UsageService } from '../../../core/services/usage/usage.service'
@@ -12,7 +13,8 @@ export class SplashService {
     private config: ConfigService,
     private token: TokenService,
     private schedule: ScheduleService,
-    private usage: UsageService
+    private usage: UsageService,
+    private notificationService: NotificationService
   ) {}
 
   evalEnrolment() {
@@ -20,7 +22,11 @@ export class SplashService {
   }
 
   loadConfig() {
-    return this.token.refresh().then(() => this.config.fetchConfigState())
+    return this.notificationService
+      .init()
+      .then(() => this.notificationService.permissionCheck())
+      .then(() => this.token.refresh())
+      .then(() => this.config.fetchConfigState())
   }
 
   isAppUpdateAvailable() {
